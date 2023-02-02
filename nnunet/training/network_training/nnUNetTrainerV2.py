@@ -91,6 +91,9 @@ class nnUNetTrainerV2(nnUNetTrainer):
 
             self.folder_with_preprocessed_data = join(self.dataset_directory, self.plans['data_identifier'] +
                                                       "_stage%d" % self.stage)
+            
+            print("folder_with_preprocessed_data == " + self.folder_with_preprocessed_data)
+            
             if training:
                 self.dl_tr, self.dl_val = self.get_basic_generators()
                 if self.unpack_data:
